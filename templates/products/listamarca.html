@@ -15,6 +15,9 @@
             <li>
                 <strong>{{ marca.nombre }}</strong><br>
                 {{ marca.description }}
+                <br>
+                <a href="{% url 'actualizar-marca' marca.pk %}">Actualizar</a>  <!-- Enlace para actualizar -->
+                <a href="{% url 'eliminar-marca' marca.pk %}">Eliminar</a>  <!-- Enlace para eliminar -->
             </li>
         {% endfor %}
     </ul>
