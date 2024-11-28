@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Productos</title>
+  </head>
+  <body>
+    <h1>Lista de Proctos</h1>
+
+    <a href="{% url 'crear-producto' %}">Agregar Nuevo producto</a>
+
+    <ul>
+      {% for producto in productos %}
+        <li>
+          <strong>{{ producto.nombre }}</strong><br />
+          {{ producto.precio }}
+          <br />
+          {{ producto.marca }}
+          <br />
+          <a href="{% url 'actualizar-producto' producto.pk %}">Actualizar</a>
+          <a href="{% url 'eliminar-producto' producto.pk %}">Eliminar</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
